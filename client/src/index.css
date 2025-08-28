@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0 0% 10%);
+  --foreground: hsl(0 0% 98%);
+  --card: hsl(0 0% 16%);
+  --card-foreground: hsl(0 0% 98%);
+  --popover: hsl(0 0% 16%);
+  --popover-foreground: hsl(0 0% 98%);
+  --primary: hsl(142 100% 55%);
+  --primary-foreground: hsl(0 0% 10%);
+  --secondary: hsl(0 0% 20%);
+  --secondary-foreground: hsl(0 0% 98%);
+  --muted: hsl(0 0% 20%);
+  --muted-foreground: hsl(0 0% 65%);
+  --accent: hsl(142 100% 55%);
+  --accent-foreground: hsl(0 0% 10%);
+  --destructive: hsl(0 84% 60%);
+  --destructive-foreground: hsl(0 0% 98%);
+  --border: hsl(0 0% 20%);
+  --input: hsl(0 0% 16%);
+  --ring: hsl(142 100% 55%);
+  --chart-1: hsl(142 100% 55%);
+  --chart-2: hsl(159.7826 100% 36.0784%);
+  --chart-3: hsl(42.0290 92.8251% 56.2745%);
+  --chart-4: hsl(147.1429 78.5047% 41.9608%);
+  --chart-5: hsl(341.4894 75.2000% 50.9804%);
+  --sidebar: hsl(0 0% 16%);
+  --sidebar-foreground: hsl(0 0% 98%);
+  --sidebar-primary: hsl(142 100% 55%);
+  --sidebar-primary-foreground: hsl(0 0% 10%);
+  --sidebar-accent: hsl(0 0% 20%);
+  --sidebar-accent-foreground: hsl(142 100% 55%);
+  --sidebar-border: hsl(0 0% 20%);
+  --sidebar-ring: hsl(142 100% 55%);
+  --font-sans: "Inter", "system-ui", "sans-serif";
+  --font-serif: Georgia, serif;
+  --font-mono: Menlo, monospace;
+  --radius: 8px;
+  --shadow-2xs: 0px 2px 0px 0px hsl(0 0% 0% / 0.00);
+  --shadow-xs: 0px 2px 0px 0px hsl(0 0% 0% / 0.00);
+  --shadow-sm: 0px 2px 0px 0px hsl(0 0% 0% / 0.00), 0px 1px 2px -1px hsl(0 0% 0% / 0.00);
+  --shadow: 0px 2px 0px 0px hsl(0 0% 0% / 0.00), 0px 1px 2px -1px hsl(0 0% 0% / 0.00);
+  --shadow-md: 0px 2px 0px 0px hsl(0 0% 0% / 0.00), 0px 2px 4px -1px hsl(0 0% 0% / 0.00);
+  --shadow-lg: 0px 2px 0px 0px hsl(0 0% 0% / 0.00), 0px 4px 6px -1px hsl(0 0% 0% / 0.00);
+  --shadow-xl: 0px 2px 0px 0px hsl(0 0% 0% / 0.00), 0px 8px 10px -1px hsl(0 0% 0% / 0.00);
+  --shadow-2xl: 0px 2px 0px 0px hsl(0 0% 0% / 0.00);
+  --tracking-normal: 0em;
+  --spacing: 0.25rem;
+}
+
+.light {
+  --background: hsl(0 0% 100%);
+  --foreground: hsl(210 25% 7.8431%);
+  --card: hsl(180 6.6667% 97.0588%);
+  --card-foreground: hsl(210 25% 7.8431%);
+  --popover: hsl(0 0% 100%);
+  --popover-foreground: hsl(210 25% 7.8431%);
+  --primary: hsl(142 100% 45%);
+  --primary-foreground: hsl(0 0% 100%);
+  --secondary: hsl(210 25% 7.8431%);
+  --secondary-foreground: hsl(0 0% 100%);
+  --muted: hsl(240 1.9608% 90%);
+  --muted-foreground: hsl(210 25% 7.8431%);
+  --accent: hsl(211.5789 51.3514% 92.7451%);
+  --accent-foreground: hsl(142 100% 45%);
+  --destructive: hsl(356.3033 90.5579% 54.3137%);
+  --destructive-foreground: hsl(0 0% 100%);
+  --border: hsl(201.4286 30.4348% 90.9804%);
+  --input: hsl(200 23.0769% 97.4510%);
+  --ring: hsl(142 100% 45%);
+  --sidebar: hsl(180 6.6667% 97.0588%);
+  --sidebar-foreground: hsl(210 25% 7.8431%);
+  --sidebar-primary: hsl(142 100% 45%);
+  --sidebar-primary-foreground: hsl(0 0% 100%);
+  --sidebar-accent: hsl(211.5789 51.3514% 92.7451%);
+  --sidebar-accent-foreground: hsl(142 100% 45%);
+  --sidebar-border: hsl(205.0000 25.0000% 90.5882%);
+  --sidebar-ring: hsl(142 100% 45%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+.gradient-bg {
+  background: linear-gradient(135deg, hsl(142 100% 55% / 0.1) 0%, transparent 50%);
+}
+
+.product-card {
+  transition: all 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.3);
+}
+
+.nav-item {
+  transition: all 0.2s ease;
+}
+
+.nav-item:hover {
+  color: var(--primary);
+}
+
+.nav-item.active {
+  color: var(--primary);
+}
+
+@media (max-width: 768px) {
+  .mobile-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+  }
+}
